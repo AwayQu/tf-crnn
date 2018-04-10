@@ -67,7 +67,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 print('\n')
 print('Loading images - Please wait ', end='')
 #my images have the extension PNG not png !
-Data, y = dir_to_dataset('train_data/*.png','train_data/ocr.csv')
+Data, y = dir_to_dataset('train_data_inconsolata/*.PNG','train_data_inconsolata/OCR.csv')
 
 nb_classes = y.max() - y.min() + 1
 
