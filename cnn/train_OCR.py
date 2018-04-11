@@ -57,7 +57,7 @@ nb_epoch = 5
 # input image dimensions
 img_rows, img_cols = 28, 28
 # number of convolutional filters to use
-nb_filters = 32
+nb_filters = 64
 # size of pooling area for max pooling
 pool_size = (2, 2)
 # convolution kernel size
@@ -67,7 +67,8 @@ os.system('cls' if os.name == 'nt' else 'clear')
 print('\n')
 print('Loading images - Please wait ', end='')
 #my images have the extension PNG not png !
-Data, y = dir_to_dataset('train_data_inconsolata/*.PNG','train_data_inconsolata/OCR.csv')
+# Data, y = dir_to_dataset('train_data_inconsolata/*.PNG','train_data_inconsolata/OCR.csv')
+Data, y = dir_to_dataset('train_data/*.png','train_data/OCR.csv')
 
 nb_classes = y.max() - y.min() + 1
 
@@ -139,7 +140,6 @@ print('\n')
 print('\n')
 model.fit(X_train, Y_train, batch_size=batch_size, epochs=nb_epoch,
           verbose=1, validation_data=(X_test, Y_test))
-
 
 score = model.evaluate(X_test, Y_test, verbose=0)
 

@@ -1,12 +1,14 @@
 file_b=""
 
 
-for ((i=1;i<100;i++));
+for ((i=1;i<5500;i++));
 do
-   b=$(( $i % 25))
+   b=$(( $i % 272))
    echo $b
-   file_a="${b}.PNG"
-   file_b="${i}.PNG"
+   c=$(printf "%06d" "$b")
+   d=$(printf "%06d" "$i")
+   file_a="${c}.PNG"
+   file_b="${d}.PNG"
    cp $file_a $file_b
 done
 #for file_a in `ls ./*.png`; do

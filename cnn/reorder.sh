@@ -2,7 +2,9 @@ file_b=""
 
 i=0
 for file_a in `ls ./*.PNG`; do
-    file_b="${i}.PNG"
+    a=$(printf "%06d" "$i")
+    file_b="${a}.PNG"
+
     mv $file_a $file_b
     i=$(($i+1))
 done
